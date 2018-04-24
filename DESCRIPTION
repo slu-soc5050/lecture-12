@@ -1,0 +1,22 @@
+Package: lecture-12
+Title: SOC 4015/5050 - Lecture 12 - OLS Regression (Part 1)
+Version: 18.1.0.9000
+Authors@R: person("Christopher", "Prener", email = "chris.prener@slu.edu",
+                  role = c("aut", "cre"))
+Description: This is the repository for Lecture 12 of the Saint Louis University
+    course SOC 4015/5050 - Quantitative Analysis. This lecture introduces the
+    theory behind linear regression and techniques for calculating a bivariate
+    OLS regression model in R. The creation of regression equations in LaTeX
+    is also introduced.
+Depends: R (>= 3.4)
+License: CC-BY-SA-4.0 + LICENSE
+Web: https://slu-soc5050.github.io
+URL: https://github.com/slu-soc5050/lecture-12
+BugReports: https://github.com/slu-soc5050/lecture-12/issues
+Imports:
+    here,
+    knitr,
+    rmarkdown,
+    testDriveR
+Remotes:
+    chris-prener/testDriveR
