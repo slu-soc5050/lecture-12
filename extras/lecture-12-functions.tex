@@ -1,0 +1,96 @@
+\documentclass{tufte-handout}
+
+\usepackage{xcolor}
+
+% set hyperlink attributes
+\hypersetup{colorlinks}
+
+% set image attributes:
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% indent subsections
+\newenvironment{subs}
+  {\adjustwidth{3em}{0pt}}
+  {\endadjustwidth}
+
+% ============================================================
+
+% define the title
+\title{SOC 4015/5050: Lecture 12 Functions}
+\author{Christopher Prener, Ph.D.}
+\date{Fall 2018}
+% ============================================================
+\begin{document}
+% ============================================================
+\maketitle % generates the title
+% ============================================================
+
+\vspace{5mm}
+\section{Packages}
+\begin{itemize}
+\item \texttt{ggplot2}
+\item \texttt{ggthemes}
+\item \texttt{RColorBrewer}
+\item \texttt{stats}
+\end{itemize}
+
+\vspace{5mm}
+\section{Creating Plots for Dissemination}
+\begin{subs}
+\subsection{Increase Geom Size}
+\noindent \texttt{ggplot2::}\texttt{geom(size = \textit{val})}
+
+\vspace{3mm}
+\subsection{Add Stroke to Scatter Plot Points}
+\begin{fullwidth}
+\noindent \texttt{ggplot2::}{\color{red}\texttt{geom\_point}}\texttt{(mapping = aes(fill = \textit{var}), pch = 21)}
+\end{fullwidth}
+
+\vspace{3mm}
+\subsection{Increase Font Size on Entire Plot}
+\noindent \texttt{ggplot2::}{\color{red}\texttt{theme\_grey}}\texttt{(base\_size = \textit{val})}
+
+\vspace{3mm}
+\subsection{Alternative Themes}
+\noindent The \texttt{ggthemes} package contains 14 alternative themes, see their \href{https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html}{introductory vignette} for a list. Each theme has its own function (e.g. \texttt{ggthemes::}{\color{red}\texttt{theme\_hc}}\texttt{()}).
+
+\newpage
+\subsection{Labels Function}
+\noindent \texttt{ggplot2::}{\color{red}\texttt{labs}}\texttt{(}
+\par \texttt{title = "plot title",}
+\par \texttt{subtitle = "plot subtitle",}
+\par \texttt{caption = "caption text",}
+\par \texttt{x = "x-axis label",}
+\par \texttt{y = "y-axis label"}
+\par \noindent \texttt{)}
+
+\vspace{3mm}
+\subsection{Adjust Legend Sizing}
+\noindent \texttt{ggplot2::}{\color{red}\texttt{theme}}\texttt{(legend.key.size = unit(\textit{val}, units = "cm"))}\sidenote{\texttt{ggplot2} accepts inches and millimeters as units of measure in addition to centimeters.}
+
+\vspace{3mm}
+\subsection{Legend Title and Labels}
+\noindent \texttt{ggplot2::}{\color{red}\texttt{scale\_fill\_discrete}}\texttt{(labels = c("label1", \\"label2"), name = "\textit{legend title}")}\sidenote{If the \texttt{geom} uses the \texttt{color} argument and not \texttt{fill}, this would need to be \texttt{ggplot2::scale\_color\_discrete()}.}
+\end{subs}
+
+\vspace{5mm}
+\section{Color Brewer}
+\begin{subs}
+\subsection{Display All Palettes}
+\noindent \texttt{RColorBrewer::}{\color{red}\texttt{display.brewer.all}}\texttt{()}
+
+\vspace{3mm}
+\subsection{Create Vector of Hex Values from Palette}
+\noindent \texttt{RColorBrewer::}{\color{red}\texttt{brewer.pal}}\texttt{(\textit{n}, "\textit{name}")}
+
+\vspace{3mm}
+\subsection{Add Discrete Color Palette}
+\noindent \texttt{ggplot2::}{\color{red}\texttt{scale\_fill\_brewer}}\texttt{(palette = "\textit{name}", \\labels = c("label1", "label2"), \\name = "\textit{legend title}")}
+\end{subs}
+
+\vspace{5mm}
+\section{Linear Model}
+\noindent \texttt{stats::}{\color{red}\texttt{lm}}\texttt{(formula = \textit{yvar} \textasciitilde\ \textit{xvar}, data = \textit{dataFrame})}
+% ============================================================
+\end{document}

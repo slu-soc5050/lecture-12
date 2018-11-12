@@ -1,0 +1,58 @@
+\documentclass{tufte-handout}
+
+\usepackage{xcolor}
+
+% set hyperlink attributes
+\hypersetup{colorlinks}
+
+% set image attributes:
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% indent subsections
+\newenvironment{subs}
+  {\adjustwidth{3em}{0pt}}
+  {\endadjustwidth}
+
+% ============================================================
+
+% define the title
+\title{SOC 4015/5050: Lecture 12 LaTeX Commands}
+\author{Christopher Prener, Ph.D.}
+\date{Fall 2018}
+% ============================================================
+\begin{document}
+% ============================================================
+\maketitle % generates the title
+% ============================================================
+
+\vspace{5mm}
+\section{Subscript Notation}
+\noindent \texttt{\{mainText\}\_\{subScript\}}
+
+\vspace{5mm}
+\section{Greek Letters}
+\begin{subs}
+\subsection{alpha ($\alpha$)}
+\noindent {\color{red}\texttt{\textbackslash alpha}}
+
+\vspace{3mm}
+\subsection{beta ($\beta$)}
+\noindent {\color{red}\texttt{\textbackslash beta}}
+
+\vspace{3mm}
+\subsection{epsilon ($\epsilon$)}
+\noindent {\color{red}\texttt{\textbackslash epsilon}}
+\end{subs}
+
+\vspace{5mm}
+\section{Example}
+\begin{verbatim}
+$ y = \alpha + {\beta}_{1}{x}_{1} + \epsilon $
+\end{verbatim}
+
+\vspace{3mm}
+\noindent \scalebox{2} {$ y = \alpha + {\beta}_{1}{x}_{1} + \epsilon $}
+
+% ============================================================
+\end{document}

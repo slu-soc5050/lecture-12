@@ -1,0 +1,67 @@
+\documentclass{tufte-handout}
+
+\usepackage{xcolor}
+
+% set image attributes:
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% set hyperlink attributes
+\hypersetup{colorlinks}
+
+% create environment for bottom paragraph:
+\newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
+
+\usepackage{enumerate}
+
+% set table attributes
+\usepackage{tabu}
+\usepackage{booktabs}
+
+% ============================================================
+
+% define the title
+\title{SOC 4015/5050: Lab-11 - Bivarite Regression}
+\author{Christopher Prener, Ph.D.}
+\date{Fall 2018}
+
+% ============================================================
+
+\begin{document}
+
+% ============================================================
+
+\maketitle % generates the title
+
+% ============================================================
+
+\vspace{5mm}
+\section{Directions}
+Please complete all steps below. All work should be uploaded to your GitHub assignment repository by 4:15pm on Monday, November 19\textsuperscript{th}, 2018. All data can be obtained from the \texttt{testDriveR} package's \texttt{auto17} data set.
+
+\vspace{5mm}
+\section{Analysis Development}
+Using RStudio and your operating system's file manager, create an R Project in the \textit{existing} directory in your assignments repository named \texttt{Lab-11}. Add a \texttt{README.md} file, notebook, and all necessary folders before beginning.\sidenote{This initial section follows the project workflow that is available in the \texttt{lecture-03} repo!}
+
+\vspace{3mm}
+\section{Regression Model 1}
+\begin{enumerate}
+\item Construct a dissemination ready scatter plot of the relationship between fuel cost (\texttt{fuelCost}) and engine size (\texttt{displ}). Include a linear regression line on the plot and color the points based on the number of gears (\texttt{gears}). 
+\item Construct a hypothesis and null hypothesis for the relationship between fuel cost (\texttt{fuelCost}) and engine size (\texttt{displ}).
+\item Construct a regression equation modeling how \texttt{displ} affects \texttt{fuelCost} using \LaTeX{}\ syntax.
+\item Execute a bivariate regression model that shows how \texttt{displ} affects \texttt{fuelCost}. Fully interpret the results of this model.
+\end{enumerate}
+
+\vspace{3mm}
+\section{Regression Model 2}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item Construct a hypothesis and null hypothesis for the relationship between fuel cost (\texttt{fuelCost}) and highway fuel efficiency (\texttt{hwyFE}).
+\item Construct a dissemination ready scatter plot of the relationship between fuel cost (\texttt{fuelCost}) and highway fuel efficiency (\texttt{hwyFE}). Include a linear regression line on the plot and color the points based on the number of cylinders (\texttt{cyl}). 
+\item Construct a regression equation modeling how \texttt{hwyFE} affects \texttt{fuelCost} using \LaTeX{}\ syntax.
+\item Execute a bivariate regression model that shows how \texttt{hwyFE} affects \texttt{fuelCost}. Fully interpret the results of this model.
+\end{enumerate}
+
+
+% ============================================================
+\end{document}

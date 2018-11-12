@@ -135,9 +135,7 @@ base +
     y = "Highway Fuel Efficiency (mpg)",
     fill = "Cylinders"
   ) +
-  theme(
-    legend.key.size = unit(1, units="cm")
-  )
+  theme(legend.key.size = unit(1, units="cm"))
 
 cp_plotSave(here("extras", "figures", "11-plotLegendSize.png"), preset = "med", dpi = 500)
 
@@ -151,15 +149,15 @@ base +
     x = "Engine Displacement (litres)",
     y = "Highway Fuel Efficiency (mpg)"
   ) +
-  theme(
-    legend.key.size = unit(1, units="cm")
-  ) +
+  theme(legend.key.size = unit(1, units="cm")) +
   scale_fill_discrete(labels=c("Four", "Five", "Six", "Eight"), name = "Cylinders")
 
 cp_plotSave(here("extras", "figures", "12-plotLegendLabels.png"), preset = "med", dpi = 500)
 
-# 13 - Remove Legend
-base +
+# 12 - Change Legend Labels
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(fill = as.factor(cyl)), pch = 21, size = 4, position = "jitter") +
+  geom_smooth(method = "lm", color = palette[5], size = 2) +
   theme_hc(base_size = 28) +
   labs(
     title = "Fuel Efficiency and Engine Size",
@@ -168,8 +166,24 @@ base +
     x = "Engine Displacement (litres)",
     y = "Highway Fuel Efficiency (mpg)"
   ) +
-  theme(
-    legend.position = "none"
-  )
+  theme(legend.key.size = unit(1, units="cm")) +
+  scale_fill_brewer(palette = "Set1", labels=c("Four", "Five", "Six", "Eight"), name = "Cylinders")
 
-cp_plotSave(here("extras", "figures", "13-plotLegendNone.png"), preset = "med", dpi = 500)
+cp_plotSave(here("extras", "figures", "13-brewer.png"), preset = "med", dpi = 500)
+
+# 14 - Remove Legend
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(fill = as.factor(cyl)), pch = 21, size = 4, position = "jitter") +
+  geom_smooth(method = "lm", color = palette[5], size = 2) +
+  theme_hc(base_size = 28) +
+  labs(
+    title = "Fuel Efficiency and Engine Size",
+    subtitle = "Select Vehicles Sold in the United States",
+    caption = "Data via ggplot2 package for R",
+    x = "Engine Displacement (litres)",
+    y = "Highway Fuel Efficiency (mpg)"
+  ) +
+  theme(legend.position = "none") +
+  scale_fill_brewer(palette = "Set1")
+
+cp_plotSave(here("extras", "figures", "14-plotLegendNone.png"), preset = "med", dpi = 500)
