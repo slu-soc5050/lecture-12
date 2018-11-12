@@ -1,4 +1,4 @@
-# lecture-12 v18.1.0.9000
+# lecture-12 v18.2.0
 
 * Initial repo setup:
     * Add `.github/` directory with community documents
@@ -12,3 +12,7 @@
 
 * Update `.github/` documents to latest community standards
 * Add `remotes` and `usethis` packages as dependencies
+
+* Add source and pdf versions of handouts
+* Add extra code demonstrating plot generation
+* Add lab assignment instructions
