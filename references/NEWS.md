@@ -1,3 +1,7 @@
+# lecture-12 v18.3.0
+
+* Add lab replication file
+
 # lecture-12 v18.2.0
 
 * Initial repo setup:
